@@ -1,9 +1,9 @@
 import random
 
-input = str(input("Would you like to input your number, or generate one? "))
+command = str(input("Would you like to input your number, or generate one? "))
 
 while True :
-    if input == "input" : 
+    if command == "input" : 
         print("")
         roll1 = int(input("First die? "))
         roll2 = int(input("Second die? "))
@@ -15,16 +15,18 @@ while True :
             even = True
         else :
             even = False
-        
+            
         print("")
         print("Rolled evens? " + str(even))
-    if input == "generate" :
+    if command == "generate" :
         print("")
-        roll3 = print("First number: " + random.randint(1, 6))
-        roll4 = print("Second number: " + random.randint(1, 6))
+        numa = random.randint(1, 6)
+        numb = random.randint(1, 6)
+        print("First number: " + str(numa))
+        print("Second number: " + str(numb))
 
-        outcome3 = roll3 % 2
-        outcome4 = roll4 % 2
+        outcome3 = numa % 2
+        outcome4 = numb % 2
 
         if outcome3 == 0 or outcome4 == 0 :
             even2 = True
@@ -33,5 +35,6 @@ while True :
 
         print("")
         print("Rolled evens? " + str(even2))
-    if input == "" :
+        break
+    if command == "" :
         break
